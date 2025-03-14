@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/user"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody":
+            [
+    {
+      "name":"Test user",
+      "cource":"QA",
+      "email":"test@test.test",
+      "age": 23
+    },
+              {
+                "name":"Test user",
+                "cource":"QA",
+                "email":"test@test.test",
+                "age": 23
+              }
+              ]
+  }
+}

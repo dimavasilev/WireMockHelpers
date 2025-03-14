@@ -1,0 +1,10 @@
+services:
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: wiremock
+    ports:
+      - "8080:8080"  # Порт для доступа к WireMock
+    volumes:
+      - ./mappings:/home/wiremock/mappings  # Папка с маппингами (если нужно)
+      - ./__files:/home/wiremock/__files    # Папка с файлами (если нужно)
+    command: --verbose  # Дополнительные параметры запуска WireMock
