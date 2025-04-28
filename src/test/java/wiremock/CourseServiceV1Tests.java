@@ -11,9 +11,6 @@ import stubs.RegisterStubsFile;
 import java.io.*;
 import java.nio.charset.*;
 
-
-
-
 @WireMockTest()
 public class CourseServiceV1Tests {
   private static String stubFilePath = System.getProperty("user.dir") + "/src/test/resources/courses_stub.json";

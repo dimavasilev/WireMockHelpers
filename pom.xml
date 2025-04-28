@@ -20,6 +20,7 @@
         <surefire.plugin.version>3.5.2</surefire.plugin.version>
         <rest-assured.version>5.5.1</rest-assured.version>
         <json.version>20250107</json.version>
+        <saaj.version>3.0.4</saaj.version>
     </properties>
 
     <dependencies>
@@ -62,7 +63,12 @@
         <artifactId>json</artifactId>
         <version>${json.version}</version>
     </dependency>
-
+    <!-- SOAP -->
+    <dependency>
+        <groupId>com.sun.xml.messaging.saaj</groupId>
+        <artifactId>saaj-impl</artifactId>
+        <version>${saaj.version}</version>
+    </dependency>
 </dependencies>
 
     <build>
@@ -83,6 +89,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <base.url>http://127.0.0.1:8080</base.url>
+                        <base.url.soap>http://127.0.0.1</base.url.soap>
+                        <base.port.soap>8080</base.port.soap>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
