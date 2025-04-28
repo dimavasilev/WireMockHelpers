@@ -14,9 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <wiremock.version>3.12.1</wiremock.version>
         <junit5.version>5.11.3</junit5.version>
+        <junit4.version>4.13.2</junit4.version>
         <assertj.version>4.0.0-M1</assertj.version>
         <compiler.plugin.version>3.13.0</compiler.plugin.version>
         <surefire.plugin.version>3.5.2</surefire.plugin.version>
+        <rest-assured.version>5.5.1</rest-assured.version>
     </properties>
 
     <dependencies>
@@ -25,15 +27,20 @@
         <artifactId>wiremock</artifactId>
         <version>${wiremock.version}</version>
     </dependency>
+<!--    <dependency>-->
+<!--        <groupId>org.junit.jupiter</groupId>-->
+<!--        <artifactId>junit-jupiter-api</artifactId>-->
+<!--        <version>${junit5.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--        <groupId>org.junit.jupiter</groupId>-->
+<!--        <artifactId>junit-jupiter-engine</artifactId>-->
+<!--        <version>${junit5.version}</version>-->
+<!--    </dependency>-->
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit5.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>${junit5.version}</version>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit4.version}</version>
     </dependency>
     <dependency>
         <groupId>org.assertj</groupId>
@@ -47,7 +54,6 @@
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>2.1.214</version>
-        <scope>test</scope>
     </dependency>
 
     <!-- JDBC -->
@@ -55,6 +61,11 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-jdbc</artifactId>
         <version>5.3.22</version>
+    </dependency>
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>${rest-assured.version}</version>
     </dependency>
 </dependencies>
 
@@ -73,6 +84,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <systemProperties>
+                        <base.url>http://127.0.0.1:8080</base.url>
+                    </systemProperties>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

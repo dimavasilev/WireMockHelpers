@@ -1,15 +1,25 @@
 package wiremock;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
-import org.junit.jupiter.api.Test;
+import dto.User;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import services.UserServiceClient;
+import stubs.RegisterStubsFile;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import java.io.IOException;
+
 
 @WireMockTest()
 public class RestAPI_Test {
+    @BeforeClass
+    public static void register() throws IOException {
+        new RegisterStubsFile().registerStubs(System.getProperty("user.dir") + "/src/test/resources/user_stub.json","/user");
+    }
+
     @Test
     public void test_get_user_stub() {
-     stubFor(get("/user").willReturn(aResponse()
-             .withBodyFile("user.json").withStatus(200)));
+        // User user = new UserServiceClient().getUserInfo();
+
     }
 }

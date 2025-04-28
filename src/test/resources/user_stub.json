@@ -1,4 +1,8 @@
 {
+  "request": {
+    "method": "GET",
+    "url": "/user"
+  },
   "name":"Test user",
   "cource":"QA",
   "email":"test@test.test",
