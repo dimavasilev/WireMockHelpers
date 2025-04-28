@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/cource"
+  },
+{
+  "name":"QA java",
+  "price": 15000
+},
+{
+"name":"Java",
+"price": 12000
+}
+}
