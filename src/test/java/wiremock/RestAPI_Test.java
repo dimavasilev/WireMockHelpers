@@ -1,10 +1,8 @@
 package wiremock;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
-import dto.User;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import services.UserServiceClient;
 import stubs.RegisterStubsFile;
 
 import java.io.IOException;
