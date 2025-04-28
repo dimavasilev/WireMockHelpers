@@ -14,7 +14,7 @@ import com.github.tomakehurst.wiremock.junit5.*;
 
 @WireMockTest()
 public class UserServiceV1Tests {
-  private String stubFilePath = System.getProperty("user.dir") + "/src/test/resources/user_stub.json";
+  private static String stubFilePath = System.getProperty("user.dir") + "/src/test/resources/user_stub.json";
 
   @BeforeClass
   public static void register() throws IOException {
@@ -24,9 +24,9 @@ public class UserServiceV1Tests {
   @Test
   public void test_get_user_stub() throws IOException {
     User user = new UserServiceClient().getUserInfo();
-    InputStream inputStream = new FileInputStream(stubFilePath);
+    InputStream inputStream = new FileInputStream(this.stubFilePath);
 
-//    JSONObject userJson = new JSONObject(IOUtils.toString(inputStream, StandardCharsets.UTF_8));
-//    userJson.getString("name");
+    JSONObject userJson = new JSONObject(IOUtils.toString(inputStream, StandardCharsets.UTF_8));
+    userJson.getString("name");
   }
 }

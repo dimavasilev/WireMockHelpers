@@ -91,9 +91,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
-                    <systemProperties>
-                        <base.url>http://127.0.0.1:8080/api</base.url>
-                    </systemProperties>
+                    <systemPropertyVariables>
+                        <base.url>http://127.0.0.1:8080</base.url>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>

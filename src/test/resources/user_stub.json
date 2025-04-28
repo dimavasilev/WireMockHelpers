@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/api/user"
+    "url": "/user"
   },
   "name":"Test user",
   "cource":"QA",

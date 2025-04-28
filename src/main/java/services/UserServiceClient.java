@@ -13,7 +13,7 @@ public class UserServiceClient {
   public UserServiceClient() {
     requestSpecification = given()
         .baseUri(System.getProperty("base.url"))
-        .baseUri("/user")
+        .basePath("/user")
         .contentType("application/json");
   }
 

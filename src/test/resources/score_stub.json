@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/api/score"
+    "url": "/score"
   },
   "response": {
     "status": 200,

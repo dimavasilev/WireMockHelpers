@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/api/courses"
+    "url": "/courses"
   },
   "jsonBody": [
     {
