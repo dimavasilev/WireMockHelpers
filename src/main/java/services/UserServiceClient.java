@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 public class UserServiceClient {
 
 
-    private RequestSpecification requestSpecification;
+    private final RequestSpecification requestSpecification;
 
     public UserServiceClient() {
         requestSpecification = given()

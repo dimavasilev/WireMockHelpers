@@ -46,7 +46,6 @@
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
         <version>${assertj.version}</version>
-        <scope>test</scope>
     </dependency>
 
     <!-- SQL (например, H2 для тестовой базы данных) -->
@@ -86,7 +85,7 @@
                 <version>${surefire.plugin.version}</version>
                 <configuration>
                     <systemProperties>
-                        <base.url>http://127.0.0.1:8080</base.url>
+                        <base.url>http://127.0.0.1:8080/api</base.url>
                     </systemProperties>
                 </configuration>
             </plugin>
