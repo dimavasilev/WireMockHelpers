@@ -19,6 +19,7 @@
         <compiler.plugin.version>3.13.0</compiler.plugin.version>
         <surefire.plugin.version>3.5.2</surefire.plugin.version>
         <rest-assured.version>5.5.1</rest-assured.version>
+        <json.version>20250107</json.version>
     </properties>
 
     <dependencies>
@@ -66,6 +67,12 @@
         <artifactId>rest-assured</artifactId>
         <version>${rest-assured.version}</version>
     </dependency>
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>${json.version}</version>
+    </dependency>
+
 </dependencies>
 
     <build>
