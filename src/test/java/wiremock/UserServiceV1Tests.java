@@ -1,15 +1,15 @@
 package wiremock;
 
+import static org.assertj.core.api.Assertions.*;
 
-import java.io.*;
-import java.nio.charset.*;
-import org.json.*;
+import com.github.tomakehurst.wiremock.junit5.*;
 import org.apache.commons.io.*;
+import org.json.*;
 import org.junit.*;
-import dto.User;
 import services.UserServiceClient;
 import stubs.RegisterStubsFile;
-import com.github.tomakehurst.wiremock.junit5.*;
+import java.io.*;
+import java.nio.charset.*;
 
 
 @WireMockTest()
@@ -23,10 +23,26 @@ public class UserServiceV1Tests {
 
   @Test
   public void test_get_user_stub() throws IOException {
-    User user = new UserServiceClient().getUserInfo();
+    String user = new UserServiceClient().getUserInfo();
     InputStream inputStream = new FileInputStream(this.stubFilePath);
 
     JSONObject userJson = new JSONObject(IOUtils.toString(inputStream, StandardCharsets.UTF_8));
-    userJson.getString("name");
+
+    assertThat(user)
+        .as("Error when retrieving user info")
+        .contains(userJson.getString("name"));
+
+    assertThat(user)
+        .as("Error when retrieving user info")
+        .contains(userJson.getString("course"));
+
+    assertThat(user)
+        .as("Error when retrieving user info")
+        .contains(userJson.getString("email"));
+
+    assertThat(user)
+        .as("Error when retrieving user info")
+        .contains(String.valueOf(userJson.getInt("age")));
+
   }
 }

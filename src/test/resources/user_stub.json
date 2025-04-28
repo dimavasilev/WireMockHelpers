@@ -4,7 +4,7 @@
     "url": "/user"
   },
   "name":"Test user",
-  "cource":"QA",
+  "course":"QA",
   "email":"test@test.test",
   "age": 23
 }

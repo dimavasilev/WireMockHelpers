@@ -3,12 +3,6 @@
     "method": "GET",
     "url": "/score"
   },
-  "response": {
-    "status": 200,
-    "jsonBody":
-    {
-      "name":"Test user",
-      "score": 78
-    }
-  }
+  "name":"Test user",
+  "score":78
 }

@@ -5,20 +5,19 @@ import static io.restassured.RestAssured.given;
 import io.restassured.specification.RequestSpecification;
 
 
-public class UserServiceClient {
+public class CourseServiceClient {
 
   private final RequestSpecification requestSpecification;
 
-  public UserServiceClient() {
+  public CourseServiceClient() {
     requestSpecification = given()
         .baseUri(System.getProperty("base.url"))
-        //.basePath("/user")
         .contentType("application/json");
   }
 
-  public String getUserInfo() {
+  public String getCourseInfo() {
     return given(this.requestSpecification)
-        .get("/user")
+        .get("/course")
         .getBody().prettyPrint();
   }
 }

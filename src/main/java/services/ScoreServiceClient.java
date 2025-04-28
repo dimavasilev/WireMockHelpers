@@ -4,21 +4,19 @@ import static io.restassured.RestAssured.given;
 
 import io.restassured.specification.RequestSpecification;
 
-
-public class UserServiceClient {
+public class ScoreServiceClient {
 
   private final RequestSpecification requestSpecification;
 
-  public UserServiceClient() {
+  public ScoreServiceClient() {
     requestSpecification = given()
         .baseUri(System.getProperty("base.url"))
-        //.basePath("/user")
         .contentType("application/json");
   }
 
-  public String getUserInfo() {
+  public String getScoreInfo() {
     return given(this.requestSpecification)
-        .get("/user")
+        .get("/score")
         .getBody().prettyPrint();
   }
 }
