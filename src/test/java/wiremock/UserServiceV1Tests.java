@@ -9,7 +9,7 @@ import java.io.IOException;
 
 
 @WireMockTest()
-public class RestApi_Test {
+public class UserServiceV1Tests {
     @BeforeClass
     public static void register() throws IOException {
         new RegisterStubsFile().registerStubs(System.getProperty("user.dir") + "/src/test/resources/user_stub.json", "/user");
