@@ -1,11 +1,7 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ ">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
     <soapenv:Body>
-        <ns2:getUserResponse xmlns:ns2="http://127.0.0.1:8080/wsdl"
-                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                             xsi:schemaLocation="http://127.0.0.1:8080/wsdl ">
+        <ns2:getUserResponse xmlns:ns2="http://example.com/wsdl">
             <name>Test user</name>
             <course>QA</course>
             <email>test@test.test</email>
